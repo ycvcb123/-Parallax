@@ -1,0 +1,466 @@
+.test {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 555;
+    opacity: .5;
+    background-image: url('../img/aaa.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.section1,
+.section2,
+.section3 {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.section3 {
+    top: -100vh;
+}
+
+
+/* 统一文案动画效果 */
+
+.text-aniamtion {
+    animation: text-aniamtion 2.5s ease-in-out 0s forwards;
+}
+
+@keyframes text-aniamtion {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* sky */
+
+.sky {
+    background-image: url('../img/bg-sky.png');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+#star {
+    position: absolute;
+    z-index: 1;
+}
+
+.sky-text {
+    width: 2.1rem;
+    height: 2rem;
+    position: absolute;
+    top: 20vh;
+    left: 15vw;
+    background-image: url('../img/sky/sky-text.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+
+.sky-love {
+    width: 4.26rem;
+    height: 3.56rem;
+    position: absolute;
+    top: 43vh;
+    left: 20vw;
+    transform: translate(-50%, -50%);
+    background-image: url('../img/sky/sky-love.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: sky-love 2s linear 0s infinite;
+}
+
+@keyframes sky-love {
+    0% {
+        /* top: 45vh; */
+        transform: scale(1);
+    }
+    50% {
+        /* top: 43vh; */
+        transform: scale(.9);
+    }
+    100% {
+        /* top: 45vh; */
+        transform: scale(1);
+    }
+}
+
+.sky-badge {
+    width: .65rem;
+    height: .75rem;
+    position: absolute;
+    top: 56vh;
+    left: 12vw;
+    transform: translate(-50%, -50%);
+    background-image: url('../img/sky/sky-badge.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: sky-badge 2s linear 1s infinite;
+}
+
+@keyframes sky-badge {
+    0% {
+        transform: translate3d(0, 0, 0)
+    }
+    50% {
+        transform: translate3d(0, .2rem, 0)
+    }
+    100% {
+        transform: translate3d(0, 0, 0)
+    }
+}
+
+.sky-sun {
+    width: 3.94rem;
+    height: 5rem;
+    position: absolute;
+    top: 0vh;
+    left: 48vw;
+    background-image: url('../img/sky/sky-sun.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.sky-pen {
+    width: 1.41rem;
+    height: 1.36rem;
+    position: absolute;
+    top: 45vh;
+    left: 91vw;
+    background-image: url('../img/sky/sky-pen.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: sky-pen 2s linear 0.5s infinite;
+}
+
+@keyframes sky-pen {
+    0% {
+        transform: translate3d(0, 0, 0)
+    }
+    50% {
+        transform: translate3d(0, .2rem, 0)
+    }
+    100% {
+        transform: translate3d(0, 0, 0)
+    }
+}
+
+.sky-music {
+    width: 1.12rem;
+    height: .95rem;
+    position: absolute;
+    top: 76vh;
+    left: -5vw;
+    background-image: url('../img/sky/sky-music.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: sky-music 2s linear 0s infinite;
+}
+
+@keyframes sky-music {
+    0% {
+        transform: translate3d(0, 0, 0)
+    }
+    50% {
+        transform: translate3d(0, .2rem, 0)
+    }
+    100% {
+        transform: translate3d(0, 0, 0)
+    }
+}
+
+.sky-music-box {
+    width: 1.22rem;
+    height: 1.54rem;
+    position: absolute;
+    top: 67vh;
+    left: 68vw;
+    background-image: url('../img/sky/sky-music-box.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: sky-music-box 2s linear 0s infinite;
+}
+
+@keyframes sky-music-box {
+    0% {
+        transform: translate3d(0, 0, 0)
+    }
+    50% {
+        transform: translate3d(0, .2rem, 0)
+    }
+    100% {
+        transform: translate3d(0, 0, 0)
+    }
+}
+
+.sky-aperture {
+    width: 7.5rem;
+    height: 4.74rem;
+    position: absolute;
+    top: 48vh;
+    left: 0vw;
+    background-image: url('../img/sky/sky-aperture.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.sky-moutain {
+    width: 7.5rem;
+    height: 1.08rem;
+    position: absolute;
+    top: -1.07rem;
+    background-image: url('../img/sky/sky-moutain.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+/* land */
+
+.land {
+    background-image: url('../img/bg-land.png');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+.land-text {
+    width: 2.81rem;
+    height: 2.02rem;
+    position: absolute;
+    top: 19.6vh;
+    left: 14vw;
+    background-image: url('../img/land/land-text.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+
+.land-double-tree {
+    width: 1.62rem;
+    height: 3.63rem;
+    position: absolute;
+    top: 31vh;
+    left: -12vw;
+    background-image: url('../img/land/land-double-tree.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.land-single-tree {
+    width: 1.74rem;
+    height: 4.02rem;
+    position: absolute;
+    right: -7vw;
+    top: 37vh;
+    background-image: url('../img/land/land-single-tree.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.land-penguin {
+    width: 11.3rem;
+    height: 7rem;
+    position: absolute;
+    left: -26vw;
+    top: 56vh;
+    transform: scale(.5);
+    background: url('../img/land/land-penguin.png');
+    -webkit-animation: run 1s steps(1) 0s infinite both;
+    animation: run 1s steps(1) 0s infinite both;
+}
+
+@keyframes run {
+    0% {
+        background-position: 0 0
+    }
+    50% {
+        background-position: 100% 0
+    }
+    100% {
+        background-position: 0 0
+    }
+}
+
+.land-penguin-run {
+    position: absolute;
+    /* animation: move 3s linear 0s forwards; */
+}
+
+@keyframes move {}
+
+
+/* ocean */
+
+.ocean {
+    background-image: url('../img/bg-ocean.png');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    z-index: 3;
+}
+
+.ocean-wave {
+    width: 7.5rem;
+    height: 1.48rem;
+    position: absolute;
+    bottom: -1.48rem;
+    background-image: url('../img/ocean/ocean-wave.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.ocean-text {
+    width: 2.86rem;
+    height: 2.04rem;
+    position: absolute;
+    top: 19.5vh;
+    left: 14vw;
+    background-image: url('../img/ocean/ocean-text.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+
+.ocean-boat {
+    width: 9rem;
+    height: 9rem;
+    position: absolute;
+    top: 24vh;
+    left: -12vw;
+    background-image: url('../img/ocean/ocean-boat.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 10;
+}
+
+.ocean-boat-b {
+    width: 9rem;
+    height: 9rem;
+    position: absolute;
+    top: 24vh;
+    left: -12vw;
+    background-image: url('../img/ocean/ocean-boat-b.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 9;
+}
+
+.ocean-boat-move {
+    position: absolute;
+    left: -57vw;
+    top: 29vh;
+    animation: ocean-boat-move 1s linear 0s forwards;
+}
+
+@keyframes ocean-boat-move {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(64vw, -32vh, 0);
+    }
+}
+
+.ocean-button {
+    bottom: 5vh;
+    width: 5.21rem;
+    height: .88rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url('../img/ocean/ocean-button.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 11;
+}
+
+
+/* 切屏动画 */
+
+.scenceAnimation {
+    transition: transform .5s ease-out;
+}
+
+
+/* 横屏提醒 */
+
+.mod-directiontips {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #fff;
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    display: none;
+}
+
+.mod-directiontips .directiontips-ico,
+.mod-directiontips .directiontips-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.mod-directiontips .directiontips-ico {
+    margin-top: -50px;
+}
+
+.mod-directiontips .ico-mobile {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    background: url(data:image/png;base64,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) no-repeat center center;
+    background-size: contain;
+}
+
+.mod-directiontips .directiontips-text {
+    width: 80%;
+    text-align: center;
+}
+
+@media all and (orientation: landscape) {
+    .ext-directiontips-v {
+        display: block;
+    }
+    html,
+    body {
+        height: 100%;
+    }
+}
+
+.ext-directiontips-h .ico-mobile {
+    -webkit-transform: rotate(-105deg);
+    transform: rotate(-105deg);
+}
+
+@media all and (orientation: portrait) {
+    .ext-directiontips-h {
+        display: block;
+    }
+}

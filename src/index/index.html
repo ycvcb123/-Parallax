@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>司庆</title>
+    <script>
+        /** 
+         * @desc
+         * 移动端适配方案, 可根据设计稿与设计稿针对的目标设备的宽度, 计算并设置html元素font-size
+         * 最终编码在使用rem时, 就直接使用设计稿标注/100的数值, 如标注稿为300px, css编码使用3rem
+         * 设计稿默认以750px为基准，有特殊项目非750的，可以通过设置全局变量PAGE_DESIGN.width为项目自己的设计稿标准尺寸
+         * 设计稿默认normal模式（即不做全屏显示），有需要全屏显示需求的，可以通过设置全局变量PAGE_DESIGN.model = "fullpage"
+         */
+        ! function(win, doc) {
+            var doc_e = doc.documentElement, //页面根元素，html
+                dpr = win.devicePixelRatio || 1; //设备独立像素比，默认是1
+            //对外公开设计稿尺寸&模式设置
+            win.PAGE_DESIGN = {};
+            Object.defineProperty(win.PAGE_DESIGN, "width", {
+                configurable: false,
+                enumerable: true,
+                get: function() {
+                    return width;
+                },
+                set: function(value) {
+                    width = value;
+                    //每次重新设置值时,重置一下rem单位值
+                    init_fontsize();
+                }
+            });
+            Object.defineProperty(win.PAGE_DESIGN, "model", {
+                configurable: false,
+                enumerable: true,
+                get: function() {
+                    return model;
+                },
+                set: function(value) {
+                    model = value;
+                    //为fullpage模式时,重置一下rem单位值
+                    value == "fullpage" && init_fontsize();
+                }
+            });
+            /**
+             *设置html根元素font-size大小
+             */
+            function init_fontsize() {
+                var clientWidth = doc_e.clientWidth,
+                    clientHeight = doc_e.clientHeight,
+                    rem_val = ((clientWidth > 640) ? 640 : clientWidth) / (PAGE_DESIGN.width / 100);
+
+                doc_e.style.fontSize = rem_val + "px";
+                if (PAGE_DESIGN.model == "fullpage") {
+                    var st = setTimeout(function() {
+                        clearTimeout(st);
+                        st = null;
+                        var offsetHeight = doc_e.offsetHeight;
+
+                        if (offsetHeight <= clientHeight) {
+                            return;
+                        }
+                        rem_val = rem_val * (1 - (offsetHeight - clientHeight) / offsetHeight);
+                        doc_e.style.fontSize = rem_val + "px";
+                    }, 16);
+                }
+
+
+            }
+            if (function e() {
+                    doc.body ? doc.body.style.fontSize = "16px" : doc.addEventListener("DOMContentLoaded", e)
+                }(),
+                function() {
+                    PAGE_DESIGN.model = "normal"; //默认为正常模式
+                    PAGE_DESIGN.width = 750; //默认设计稿的尺寸
+                }(),
+                win.addEventListener("resize", init_fontsize),
+                win.addEventListener("pageshow", function(e) {
+                    win.persisted && init_fontsize()
+                }),
+                dpr >= 2) {
+                doc.documentElement.setAttribute("dpr", dpr);
+            }
+        }(window, document)
+    </script>
+</head>
+
+<body>
+    <div class="main-wrap">
+        <div class="main">
+            <!-- 天空 -->
+            <div id="section1" class="section1 sky">
+                <!-- 星空动画 -->
+                <canvas id="star"></canvas>
+                <!-- 太阳 -->
+                <div class="sky-sun"></div>
+                <!-- 文字 -->
+                <div class="sky-text text-aniamtion"></div>
+                <!-- 爱心 -->
+                <div class="sky-love"></div>
+                <!-- 光环 -->
+                <div class="sky-aperture"></div>
+                <!-- 笔 -->
+                <div class="sky-pen"></div>
+                <!-- 徽章 -->
+                <div class="sky-badge"></div>
+                <!-- 音乐盒 -->
+                <div class="sky-music"></div>
+                <!-- 音箱 -->
+                <div class="sky-music-box"></div>
+            </div>
+            <!-- 陆地 -->
+            <div id="section2" class="section2 land">
+                <div id="sky-moutain" class="sky-moutain"></div>
+                <!-- text -->
+                <div id="land-text" class="land-text"></div>
+                <!-- double tree -->
+                <div class="land-double-tree"></div>
+                <!-- single tree -->
+                <div class="land-single-tree"></div>
+                <div id="land-penguin-run">
+                    <div class="land-penguin"></div>
+                </div>
+                <!-- 第三页的底图 -->
+                <div class="ocean-wave"></div>
+            </div>
+            <!-- 大海 -->
+            <div id="section3" class="section3 ocean">
+                <div id="ocean-text" class="ocean-text"></div>
+                <!-- 船只整体移动 -->
+                <div id="ocean-boat-move">
+                    <div class="ocean-boat"></div>
+                    <div class="ocean-boat-b"></div>
+                </div>
+                <div id="ocean-button" class="ocean-button"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 横屏提醒 -->
+    <div class="mod-directiontips ext-directiontips-v">
+        <div class="directiontips-ico"><span class="ico-mobile"></span></div>
+        <p class="directiontips-text">手机竖屏体验效果更佳 : )</p>
+    </div>
+</body>
+
+</html>
